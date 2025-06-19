@@ -3,122 +3,385 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ज्ञानोदय अकादमी | प्रीमियम कोर्सेज</title>
+    <title>Study with Suraj | Unlock Your Potential</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
         }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #2c3e50 !important;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: #555 !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #0d6efd !important;
+        }
+
+        /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            padding: 80px 0;
         }
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            font-weight: 600;
-            color: #343a40;
+            margin-bottom: 60px;
+            font-weight: 700;
+            color: #2c3e50;
         }
-        .card {
-            border: none;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0d6efd;
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        .card:hover {
+        
+        /* --- Feature Cards --- */
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
-        .card-header {
-            background-color: #0d6efd;
+        .feature-card .icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+
+        /* --- Pricing Cards --- */
+        .pricing-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .pricing-card .card-header {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-weight: 600;
+        }
+
+        /* --- Testimonial Cards --- */
+        .testimonial-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        /* --- FAQ Accordion --- */
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0c63e4;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 20px 0;
+        }
+        .footer .social-icons a {
             color: white;
             font-size: 1.5rem;
-            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s, transform 0.3s;
         }
-        .btn-premium {
-            background: #ffc107;
-            border: none;
-            font-weight: 600;
+        .footer .social-icons a:hover {
+            color: #0d6efd;
+            transform: translateY(-3px);
         }
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>ज्ञानोदय अकादमी में आपका स्वागत है</h1>
-        <p class="lead">सफलता की ओर आपका पहला कदम। हमारे प्रीमियम स्टडी मटेरियल के साथ अपनी तैयारी को नई ऊंचाइयों पर ले जाएं।</p>
-        <a href="{{ channel_link }}" target="_blank" class="btn btn-light btn-lg mt-3">🚀 हमारा टेलीग्राम चैनल ज्वाइन करें</a>
-    </div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-book-open-reader"></i> Study with Suraj
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container my-5">
-        <h2 class="section-title">हमारे सब्सक्रिप्शन प्लान्स</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card text-center">
-                    <div class="card-header">बेसिक प्लान</div>
-                    <div class="card-body">
-                        <h5 class="card-title">₹199<small class="text-muted">/माह</small></h5>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>✔️ सभी विषयों के नोट्स</li>
-                            <li>✔️ साप्ताहिक टेस्ट</li>
-                            <li>✔️ शंका समाधान सत्र</li>
-                            <li>❌ व्यक्तिगत मेंटरशिप</li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">अभी खरीदें</button>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 data-aos="fade-up">अपनी क्षमता को अनलॉक करें</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">"Study with Suraj" के साथ अपनी परीक्षा की तैयारी को नई दिशा दें।</p>
+            <a href="#courses" class="btn btn-primary btn-lg mt-3" data-aos="fade-up" data-aos-delay="400">हमारे कोर्सेज़ देखें</a>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">हमें क्यों चुनें?</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>लाइव क्लासेस</h3>
+                        <p>अनुभवी शिक्षकों से सीधे सीखें और अपने संदेह दूर करें।</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card text-center border-primary">
-                    <div class="card-header bg-primary text-white">स्टैंडर्ड प्लान</div>
-                    <div class="card-body">
-                        <h5 class="card-title">₹499<small class="text-muted">/माह</small></h5>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>✔️ सभी विषयों के नोट्स</li>
-                            <li>✔️ दैनिक टेस्ट और क्विज़</li>
-                            <li>✔️ 24/7 शंका समाधान</li>
-                            <li>✔️ व्यक्तिगत मेंटरशिप</li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">अभी खरीदें</button>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fa-solid fa-file-pdf"></i></div>
+                        <h3>विस्तृत नोट्स</h3>
+                        <p>हर विषय के उच्च-गुणवत्ता वाले PDF नोट्स जो रिवीजन में मदद करते हैं।</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-12 mb-4">
-                <div class="card text-center">
-                    <div class="card-header">प्रीमियम प्लान</div>
-                    <div class="card-body">
-                        <h5 class="card-title">₹999<small class="text-muted">/माह</small></h5>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>✔️ सभी स्टैंडर्ड लाभ</li>
-                            <li>✔️ लाइव वीडियो क्लासेस</li>
-                            <li>✔️ परीक्षा रणनीति सत्र</li>
-                            <li>✔️ प्रीमियम कंटेंट एक्सेस</li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">अभी खरीदें</button>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3>24/7 शंका समाधान</h3>
+                        <p>कभी भी, कहीं भी अपने प्रश्नों के उत्तर पाएं हमारी समर्पित टीम से।</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="courses" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">हमारे सब्सक्रिप्शन प्लान्स</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="zoom-in">
+                    <div class="pricing-card text-center">
+                        <div class="card-header bg-secondary text-white py-3">बेसिक प्लान</div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title display-4 fw-bold">₹199<small class="text-muted fs-5">/माह</small></h5>
+                            <ul class="list-unstyled mt-4 mb-4">
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>सभी विषयों के नोट्स</li>
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>साप्ताहिक टेस्ट</li>
+                                <li class="py-2 text-muted"><i class="fa-solid fa-times me-2"></i>शंका समाधान सत्र</li>
+                                <li class="py-2 text-muted"><i class="fa-solid fa-times me-2"></i>व्यक्तिगत मेंटरशिप</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-primary btn-lg">अभी खरीदें</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="pricing-card text-center border-primary border-3">
+                        <div class="card-header bg-primary text-white py-3">स्टैंडर्ड प्लान</div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title display-4 fw-bold">₹499<small class="text-muted fs-5">/माह</small></h5>
+                            <ul class="list-unstyled mt-4 mb-4">
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>सभी विषयों के नोट्स</li>
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>दैनिक टेस्ट और क्विज़</li>
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>24/7 शंका समाधान</li>
+                                <li class="py-2 text-muted"><i class="fa-solid fa-times me-2"></i>व्यक्तिगत मेंटरशिप</li>
+                            </ul>
+                            <button type="button" class="btn btn-primary btn-lg">अभी खरीदें</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="pricing-card text-center">
+                         <div class="card-header bg-secondary text-white py-3">प्रीमियम प्लान</div>
+                        <div class="card-body p-4">
+                           <h5 class="card-title display-4 fw-bold">₹999<small class="text-muted fs-5">/माah</small></h5>
+                           <ul class="list-unstyled mt-4 mb-4">
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>सभी स्टैंडर्ड लाभ</li>
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>लाइव वीडियो क्लासेस</li>
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>परीक्षा रणनीति सत्र</li>
+                                <li class="py-2"><i class="fa-solid fa-check text-success me-2"></i>प्रीमियम कंटेंट एक्सेस</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-primary btn-lg">अभी खरीदें</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title">हमारे छात्र क्या कहते हैं</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="testimonial-card">
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Student Photo">
+                        <p class="fst-italic">"इस प्लेटफॉर्म के नोट्स और टेस्ट सीरीज ने मेरी बहुत मदद की। सूरज सर का पढ़ाने का तरीका अद्भुत है!"</p>
+                        <h5 class="mt-3 mb-0">राहुल कुमार</h5>
+                        <div class="text-warning">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="testimonial-card">
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704e" alt="Student Photo">
+                        <p class="fst-italic">"24/7 डाउट सॉल्विंग फीचर सबसे अच्छा है। अब मैं कभी भी अभ्यास करते समय फंसती नहीं हूँ।"</p>
+                        <h5 class="mt-3 mb-0">प्रिया शर्मा</h5>
+                        <div class="text-warning">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">हमारे बारे में</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://i.pravatar.cc/500?u=suraj" class="img-fluid rounded-circle shadow" alt="Suraj - The Educator">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <h3>Study with Suraj</h3>
+                    <p>मेरा नाम सूरज है और मेरा मिशन हर छात्र को सस्ती और गुणवत्तापूर्ण शिक्षा प्रदान करना है। मैं पिछले 5 वर्षों से छात्रों का मार्गदर्शन कर रहा हूं और मानता हूं कि सही रणनीति और संसाधनों के साथ कोई भी लक्ष्य हासिल किया जा सकता है।</p>
+                    <p>इस प्लेटफॉर्म के माध्यम से, मैं अपने अनुभव और ज्ञान को आप सभी के साथ साझा करना चाहता हूं।</p>
+                    <div class="social-icons mt-4">
+                        <h5 class="mb-3">हमसे जुड़ें:</h5>
+                        <a href="#" target="_blank" class="me-3 fs-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" target="_blank" class="me-3 fs-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="me-3 fs-3"><i class="fab fa-telegram"></i></a>
+                        <a href="#" target="_blank" class="me-3 fs-3"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title">अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">मैं सब्सक्रिप्शन कैसे खरीद सकता हूँ?</button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">आप 'कोर्सेज़' सेक्शन में जाकर अपने पसंदीदा प्लान के नीचे 'अभी खरीदें' बटन पर क्लिक करके भुगतान कर सकते हैं।</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">क्या मुझे नोट्स का प्रिंटआउट मिल सकता है?</button></h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">हाँ, सभी PDF नोट्स डाउनलोड करने योग्य हैं और आप उनका प्रिंटआउट ले सकते हैं।</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">अगर मुझे कोई क्लास मिस हो जाए तो क्या होगा?</button></h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">सभी लाइव क्लासेस की रिकॉर्डिंग आपके अकाउंट में उपलब्ध रहती है, जिसे आप कभी भी देख सकते हैं।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 ज्ञानोदय अकादमी. सभी अधिकार सुरक्षित।</p>
-            <p>हमसे संपर्क करें: contact@gyanoday.com</p>
+        <div class="container text-center">
+            <h4>Study with Suraj</h4>
+            <p>"सीखने में निवेश सर्वोत्तम ब्याज देता है।"</p>
+            <div class="social-icons my-4">
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p class="mb-0">&copy; 2025 Study with Suraj. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 1000, // एनिमेशन की अवधि
+            once: true, // एनिमेशन सिर्फ एक बार हो
+        });
+    </script>
 </body>
 </html>
