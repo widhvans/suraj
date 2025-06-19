@@ -2,11 +2,11 @@
 
 # --- Telegram Bot Configuration ---
 # अपना Telegram Bot Token यहाँ डालें। इसे @BotFather से प्राप्त करें।
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN" 
+BOT_TOKEN = "7513275210:AAGgRzfVk1_nEaekouSY1kWmp0eqD3pNw-I" 
 
 # --- Channel/Website Information ---
 # आपके स्टडी चैनल का लिंक
-STUDY_CHANNEL_LINK = "https://t.me/your_study_channel_name" 
+STUDY_CHANNEL_LINK = "https://t.me/joinnowearn" 
 
 # --- VPS & Web App Configuration ---
 # आपके VPS का IP एड्रेस
